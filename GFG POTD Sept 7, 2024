@@ -1,0 +1,20 @@
+Nth Natural Number
+
+
+class Solution {
+  public:
+    long long findNth(long long n) {
+        // code here.
+        
+        int b=1; long long ans=0;
+        
+        while(n){
+            int d=n%9;
+            ans+=d*b;
+            b*=10;
+            n/=9;
+        }
+        
+        return ans;
+    }
+};
