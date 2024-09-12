@@ -1,0 +1,28 @@
+
+
+class Solution {
+    
+  public:
+    // Function to return the minimum cost of connecting the ropes.
+    long long minCost(vector<long long>& arr) {
+        // Your code here
+        priority_queue<long long, vector<long long> , greater<long long> > p;
+        
+        for(int i=0;i<arr.size();i++) p.push(arr[i]);
+        
+        long long ans=0;
+        
+        
+        while(p.size()>1){
+            
+            long long a=p.top(); p.pop(); 
+            long long b=p.top(); p.pop();
+            
+            ans+=a+b;
+            
+            p.push(a+b);
+        }
+        
+        return ans;
+    }
+};
